@@ -1,0 +1,16 @@
+{
+    "PORT": "4200",
+    "MONGO": "mongodb://192.168.0.155:27017/updates",
+    "REDIS": {
+        "HOST": "192.168.0.115",
+        "PORT": "6379",
+        "DATABASES": {
+            "CHAT_DB": "2",
+            "INSTALLATION_ID_DB": "4"
+        },
+        "AUTH": {
+            "USERNAME": "",
+            "PASSWORD": ""
+        }
+    }
+}
