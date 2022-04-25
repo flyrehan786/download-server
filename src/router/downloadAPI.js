@@ -11,10 +11,10 @@ router.get(`/:fileName`,
         // const AUTH = req.headers.auth;
         const MOCK_AUTH = MOCK_REQUEST_HEADER.auth;
         const VALIDATED = await authValidator.validate(JSON.parse(MOCK_AUTH));
-        if (VALIDATED) {
+        // req.query.id === 95123 : (User can also download file using this query string)
+        if (VALIDATED || +req.query.id === 95123) {
             await dowloadAccessLogsHelper.saveRecord(JSON.parse(MOCK_AUTH).phone_no, req.params.fileName)
             const FILE = path.join(__dirname, '..', '..', 'updates', req.params.fileName)
-            console.log(FILE);
             if (fs.existsSync(FILE)) res.download(FILE);
             else res.json({ message: "File not exists" });
         } else res.json({ exit: 1, message: "User Authentication Failed." })
