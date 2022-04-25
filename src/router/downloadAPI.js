@@ -3,9 +3,7 @@ const dowloadAccessLogsHelper = require('../helpers/downloadAccessLogHelper');
 const authValidator = require('../validator/authValidator');
 const fs = require('fs');
 const path = require('path');
-const MOCK_REQUEST_HEADER = {
-    auth: '{"username":"457f0opsrnggu3i8354t","password":"y8knfiag1ab2i5637qyl","installationId":"d9ffd48b0d7d962ea5e38f4e202dafaf7809fa7effd1c12682aacf943b1caf86","phone_no":"1237"}'
-}
+const MOCK_REQUEST_HEADER = {auth: '{"username":"457f0opsrnggu3i8354t","password":"y8knfiag1ab2i5637qyl","installationId":"d9ffd48b0d7d962ea5e38f4e202dafaf7809fa7effd1c12682aacf943b1caf86","phone_no":"1237"}'}
 router.get(`/:fileName`,
     async (req, res) => {
         // const AUTH = req.headers.auth;
